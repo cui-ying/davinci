@@ -24,7 +24,6 @@ import edp.core.consts.Consts;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -49,9 +48,6 @@ public class ServerUtils {
 
     @Value("${server.access.port:}")
     private String accessPort;
-
-    @Value("${file.base-path}")
-    private String basePath;
 
     public String getHost() {
 
@@ -93,7 +89,4 @@ public class ServerUtils {
         return protocol + PROTOCOL_SEPARATOR + hostName+":" + port;
     }
 
-    public String getBasePath() {
-        return basePath.replaceAll("/", File.separator).replaceAll(File.separator + "{2,}", File.separator);
-    }
 }

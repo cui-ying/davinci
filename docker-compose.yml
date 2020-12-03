@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  davinci:
+    build: .
+    container_name: aa
+    restart: always
+#    user: 1000:1000
+    depends_on:
+      - chrome
+    ports:
+      - 50005:8080
+    environment:
+      SCREENSHOT_REMOTE_WEBDRIVER_URL: http://chrome:4444/wd/hub
+    volumes:
+      - /etc/localtime:/etc/localtime
+#      - ./davinci-assembly_0.3.1-0.3.1-SNAPSHOT-dist-rc.zip:/tmp/davinci-assembly_0.3.1-0.3.1-SNAPSHOT-dist-rc.zip
+      - ./config/application.yml:/opt/davinci/config/application.yml
+#      - ./webapp/build:/opt/davinci/davinci-ui
+    networks:
+      - mynet
+  chrome:
+    image: selenium/standalone-chrome
+    shm_size: 2g
+    environment:
+      - TZ=Asia/Shanghai
+networks:
+
+  mynet:
+    driver: bridge
+    name: davinci_network

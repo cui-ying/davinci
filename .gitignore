@@ -34,3 +34,5 @@ userfiles/
 bin/upgrade.go
 bin/upgrade
 .history/
+package-lock.json
+davinci-ui

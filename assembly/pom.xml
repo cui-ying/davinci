@@ -5,14 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>davinci-parent_0.3.1</artifactId>
         <groupId>edp.davinci</groupId>
-        <version>0.3.1-SNAPSHOT</version>
+        <artifactId>davinci-parent</artifactId>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>davinci-assembly_0.3.1</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>davinci-assembly</artifactId>
 
     <licenses>
         <license>
@@ -34,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>edp.davinci</groupId>
-            <artifactId>davinci-server_0.3.1</artifactId>
+            <artifactId>davinci-server</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

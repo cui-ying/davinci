@@ -19,7 +19,6 @@
  */
 
 import React, { useMemo, FC } from 'react'
-import Canvas from './Canvas'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Login from 'containers/Login'
@@ -27,6 +26,7 @@ import Register from 'containers/Register'
 import { makeSelectVersion } from 'containers/App/selectors'
 import JoinOrganization from 'containers/Register/JoinOrganization'
 import { CLIENT_VERSION } from 'app/globalConstants'
+
 const styles = require('./Background.less')
 
 export const Background: FC = () => {
@@ -49,14 +49,14 @@ export const Background: FC = () => {
       </p>
     )
   }, [version])
-
   return (
     <div className={styles.container}>
-      <Canvas />
-      <img
-        className={styles.logo}
-        src={require('assets/images/logo_light.svg')}
-      />
+      {/*<Canvas />*/}
+      {/*<img*/}
+      {/*  className={styles.logo}*/}
+      {/*  src={require('assets/images/logo_light.svg')}*/}
+      {/*/>*/}
+      <div className={styles.logo}>百草味数据中台</div>
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />

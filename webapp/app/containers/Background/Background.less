@@ -1,7 +1,10 @@
 @import "~assets/less/variable";
 
 .container {
-  background: @secondary-color;
+  //background: @secondary-color;
+  background: url('~assets/images/login_bg.png');
+  background-size: 100%;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -27,12 +30,19 @@
     display: block;
   }
 
+  //.logo {
+  //  width: 200px;
+  //  height: 40px;
+  //  position: relative;
+  //  z-index: 1;
+  //}
   .logo {
-    width: 200px;
-    height: 40px;
-    position: relative;
-    z-index: 1;
+    color: @white;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 10px;
   }
+
 }
 
 @media (max-width: 768px) {
