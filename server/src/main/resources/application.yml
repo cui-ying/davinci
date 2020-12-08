@@ -3,8 +3,8 @@ davinci:
 
 
 file:
-  userfiles-path: ${DAVINCI3_HOME}/userfiles/
-  web_resources: ${DAVINCI3_HOME}/davinci-ui/
+  userfiles-path: ${DAVINCI3_HOME:.}/userfiles/
+  web_resources: ${DAVINCI3_HOME:.}/davinci-ui/
 
 
 spring:
@@ -14,10 +14,10 @@ spring:
       max-file-size: 1024MB
       enabled: true
 
-  config:
-    location: classpath:/
-    additional-location: file:${DAVINCI3_HOME}\config
-    name: application
+#  config:
+#    location: classpath:/
+#    additional-location: file:${DAVINCI3_HOME:.}\config
+#    name: application
 
   resources:
     static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, file:${file.userfiles-path}, file:${file.web_resources}
@@ -40,7 +40,7 @@ spring:
 
 
 logging:
-  config: file:${DAVINCI3_HOME}/config/logback.xml
+  config: file:${DAVINCI3_HOME:.}/config/logback.xml
 
 
 springfox:
@@ -76,4 +76,4 @@ mapper:
 sql_template_delimiter: $
 
 
-custom-datasource-driver-path: ${DAVINCI3_HOME}/config/datasource_driver.yml
+custom-datasource-driver-path: ${DAVINCI3_HOME:.}/config/datasource_driver.yml

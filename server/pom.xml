@@ -503,6 +503,36 @@
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerVersion>${java.version}</compilerVersion>
+                    <optimize>true</optimize>
+                    <maxmem>1024m</maxmem>
+                    <fork>true</fork>
+                    <compilerArguments>
+                        <bootclasspath>${java.home}/lib/rt.jar${path.separator}${java.home}/lib/jce.jar${path.separator}${java.home}/../lib/tools.jar</bootclasspath>
+                    </compilerArguments>
+                    <compilerArgs>
+                        <arg>-Xlint:all,-serial,-path</arg>
+                        <arg>-XDignore.symbol.file</arg>
+                    </compilerArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
