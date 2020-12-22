@@ -1,0 +1,6 @@
+gitee   https://gitee.com/mirrors/Davinci.git (fetch)
+gitee   https://gitee.com/mirrors/Davinci.git (push)
+github  https://github.com/cui-ying/davinci.git (fetch)
+github  https://github.com/cui-ying/davinci.git (push)
+origin  https://gitee.com/cui-ying/davinci.git (fetch)
+origin  https://gitee.com/cui-ying/davinci.git (push)
